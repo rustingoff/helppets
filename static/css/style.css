@@ -8,3 +8,7 @@ theme. But don't modify main-style.css file.
 */
 
 /* Your custom css codes start here: */
+
+.btn-donate {
+    margin-top: 26px !important;
+}
