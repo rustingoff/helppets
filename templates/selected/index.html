@@ -122,9 +122,9 @@
                         <ul class="menuzord-menu onepage-nav">
                             <li class="active"><a href="#home">Home</a></li>
                             <li><a href="#about">About</a></li>
-                            <li><a href="#gallary">Roadmap</a></li>
-                            <li><a href="#services">Services</a></li>
                             <li><a href="#products">Donation Case</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#gallary">Roadmap</a></li>
                             <li><a href="#blog">News</a></li>
                         </ul>
                     </nav>
@@ -135,7 +135,6 @@
 
     <!-- Start main-content -->
     <div class="main-content">
-
         <!-- Section: home -->
         <section id="home">
             <div class="container-fluid p-0">
@@ -370,7 +369,96 @@
             </div>
         </section>
 
-        <!-- Section: Gallery -->
+        <!-- Section: Products  -->
+    <section id="products" class="layer-overlay overlay-dark-8" data-bg-img="{% static 'images/pattern/pt19.jpg' %}">
+        <div class="container pr-5 pl-5 mt-0 pt-40 pb-0 mb-0">
+            <div class="section-title text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-center mb-40 text-white">Donation<span class="text-theme-colored">  Case</span>
+                        </h2>
+                        <!-- Portfolio Gallery Grid -->
+                        <div id="grid-petcare-gallery" class="gallery-isotope grid-3 gutter clearfix">
+                            <!-- Portfolio Item Start -->
+                            {% for item in donation_case %}
+                            <div class="gallery-item kennel">
+                                <div class="item">
+                                    <div class="product">
+                                        <div class="product-thumb">
+                                            <img alt="" src="{{ item.image.url }}" class="img-responsive img-fullwidth">
+                                            <div class="overlay">
+                                                <div class="btn-add-to-cart-wrapper">
+                                                    <a class="btn btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700"
+                                                       href="shop-cart.html" target="_blank">Donate</a>
+                                                </div>
+                                                <div class="btn-product-view-details">
+                                                    <a class="btn btn-default btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700"
+                                                       href="shop-product-details.html" target="_blank">Learn more</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-details text-center">
+                                            <a href="#"><h5 class="product-title text-white font-18">{{ item.title }}</h5></a>
+                                            <div class="price text-white">{{ item.description }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Section: Services -->
+        <section id="services" data-bg-img="{% static 'images/pattern/p8.png' %}">
+            <div class="container pb-80">>
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="img-fullwidth" src="{{ service.image.url }}" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="meet-doctors">
+                                <h2 class="text-uppercase mt-20">{{ service.first_part_title }}<span
+                                        class="text-theme-colored"> {{ service.second_part_title }}</span></h2>
+                                <p>{{ service.description }}</p>
+                            </div>
+                            <div class="row mt-30">
+                                <div class="col-md-4">
+                                    <div class="thumb text-center">
+                                        <img class="img-thumbnail" src="{{ service.m_image1.url }}" alt="">
+                                        <h4 class="icon-box-title mt-20 mb-20 text-uppercase letter-sapce-3 font-weight-400">
+                                            {{ service.m_image1_word1 }}<span class="text-theme-colored"> {{ service.m_image1_word2 }}</span></h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="thumb text-center">
+                                        <img class="img-thumbnail" src="{{ service.m_image2.url }}"
+                                             alt="">
+                                        <h4 class="icon-box-title mt-20 mb-20 text-uppercase letter-sapce-3 font-weight-400">
+                                            {{ service.m_image2_word1 }}<span class="text-theme-colored"> {{ service.m_image2_word2 }}</span></h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="thumb text-center">
+                                        <img class="img-thumbnail object-fit" src="{{ service.m_image3.url }}"
+                                             alt="">
+                                        <h4 class="icon-box-title mt-20 mb-20 text-uppercase letter-sapce-3 font-weight-400">
+                                            {{ service.m_image3_word1 }} <span class="text-theme-colored"> {{ service.m_image3_word2 }}</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Section: Gallery -->
         <section id="gallary" class="layer-overlay overlay-dark-8" data-bg-img="{% static 'images/pattern/pt18.png' %}">
             <div class="container pt-40 pb-40">
                 <div class="section-title text-center">
@@ -419,95 +507,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Section: Services -->
-        <section id="services" data-bg-img="{% static 'images/pattern/p8.png' %}">
-            <div class="container pb-80">>
-                <div class="section-content">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img class="img-fullwidth" src="{{ service.image.url }}" alt="">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="meet-doctors">
-                                <h2 class="text-uppercase mt-20">{{ service.first_part_title }}<span
-                                        class="text-theme-colored"> {{ service.second_part_title }}</span></h2>
-                                <p>{{ service.description }}</p>
-                            </div>
-                            <div class="row mt-30">
-                                <div class="col-md-4">
-                                    <div class="thumb text-center">
-                                        <img class="img-circle img-thumbnail" src="{{ service.m_image1.url }}" alt="">
-                                        <h4 class="icon-box-title mt-20 mb-20 text-uppercase letter-sapce-3 font-weight-400">
-                                            <a href="#">Pet<span class="text-theme-colored"> Birds</span> </a></h4>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="thumb text-center">
-                                        <img class="img-circle img-thumbnail" src="{{ service.m_image2.url }}"
-                                             alt="">
-                                        <h4 class="icon-box-title mt-20 mb-20 text-uppercase letter-sapce-3 font-weight-400">
-                                            <a href="#">Pet<span class="text-theme-colored"> Rabbits</span> </a></h4>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="thumb text-center">
-                                        <img class="img-circle img-thumbnail object-fit" src="{{ service.m_image3.url }}"
-                                             alt="">
-                                        <h4 class="icon-box-title mt-20 mb-20 text-uppercase letter-sapce-3 font-weight-400">
-                                            <a href="#">Pet <span class="text-theme-colored"> Fish</span> </a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <!-- Section: Products  -->
-    <section id="products" class="layer-overlay overlay-dark-8" data-bg-img="{% static 'images/pattern/pt19.jpg' %}">
-        <div class="container pr-5 pl-5 mt-0 pt-40 pb-0 mb-0">
-            <div class="section-title text-center">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="text-center mb-40 text-white">Donation<span class="text-theme-colored">  Case</span>
-                        </h2>
-                        <!-- Portfolio Gallery Grid -->
-                        <div id="grid-petcare-gallery" class="gallery-isotope grid-3 gutter clearfix">
-                            <!-- Portfolio Item Start -->
-                            {% for item in donation_case %}
-                            <div class="gallery-item kennel">
-                                <div class="item">
-                                    <div class="product">
-                                        <div class="product-thumb">
-                                            <img alt="" src="{{ item.image.url }}" class="img-responsive img-fullwidth">
-                                            <div class="overlay">
-                                                <div class="btn-add-to-cart-wrapper">
-                                                    <a class="btn btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700"
-                                                       href="shop-cart.html" target="_blank">Donate</a>
-                                                </div>
-                                                <div class="btn-product-view-details">
-                                                    <a class="btn btn-default btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700"
-                                                       href="shop-product-details.html" target="_blank">Learn more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-details text-center">
-                                            <a href="#"><h5 class="product-title text-white font-18">{{ item.title }}</h5></a>
-                                            <div class="price text-white">{{ item.description }}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Section: Blog-->
     <section id="blog">
