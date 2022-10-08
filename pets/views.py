@@ -1,5 +1,6 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from .models import MainSlider, About, RoadMap, Service, DonationCase, News
+from .models import MainSlider, About, RoadMap, Service, DonationCase, News, SubscribeForm, Subscribe
 
 
 def index(request):
@@ -20,3 +21,15 @@ def index(request):
     }
 
     return render(request, 'selected/index.html', context)
+
+
+def get_subscription(request):
+    if request.method == 'POST':
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            s = Subscribe()
+            s.email = form.cleaned_data['your_email']
+            s.save()
+            return HttpResponseRedirect('/')
+    else:
+        return HttpResponseRedirect('/')

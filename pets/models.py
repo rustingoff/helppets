@@ -1,4 +1,17 @@
 from django.db import models
+from django import forms
+
+
+class SubscribeForm(forms.Form):
+    your_email = forms.CharField(label='Your Email', max_length=100)
+
+
+class Subscribe(models.Model):
+    id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=100)
+
+    def __str__(self):
+        return str(self.id) + ' ' + self.email
 
 
 class MainSlider(models.Model):
