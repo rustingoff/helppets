@@ -3,13 +3,13 @@ from django.db import models
 
 class MainSlider(models.Model):
     id = models.AutoField(primary_key=True)
-    first_part_title = models.CharField(max_length=200)
-    second_part_title = models.CharField(max_length=200, default='')
+    title = models.CharField(max_length=200)
+    subtitle = models.CharField(max_length=200, default='')
     description = models.TextField()
     image = models.FileField(upload_to='slider')
 
     def __str__(self):
-        return self.first_part_title + ' ' + self.second_part_title
+        return self.title + ' ' + self.subtitle
 
 
 class About(models.Model):
