@@ -3,22 +3,24 @@ from django.db import models
 
 class MainSlider(models.Model):
     id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=200)
+    first_part_title = models.CharField(max_length=200)
+    second_part_title = models.CharField(max_length=200, default='')
     description = models.TextField()
     image = models.FileField(upload_to='slider')
 
     def __str__(self):
-        return self.title
+        return self.first_part_title + ' ' + self.second_part_title
 
 
 class About(models.Model):
     id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=200)
+    first_part_title = models.CharField(max_length=200)
+    second_part_title = models.CharField(max_length=200, default='')
     description = models.TextField()
     image = models.FileField(upload_to='about')
 
     def __str__(self):
-        return self.title
+        return self.first_part_title + ' ' + self.second_part_title
 
 
 class RoadMap(models.Model):
@@ -33,13 +35,16 @@ class RoadMap(models.Model):
 
 class Service(models.Model):
     id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=200)
+    first_part_title = models.CharField(max_length=200)
+    second_part_title = models.CharField(max_length=200, default='')
     description = models.TextField()
     image = models.FileField(upload_to='service')
-    micro_images = models.FileField(upload_to='service', null=True, blank=True)
+    m_image1 = models.FileField(upload_to='service/m', null=True)
+    m_image2 = models.FileField(upload_to='service/m', null=True)
+    m_image3 = models.FileField(upload_to='service/m', null=True)
 
     def __str__(self):
-        return self.title
+        return self.first_part_title + ' ' + self.second_part_title
 
 
 class DonationCase(models.Model):

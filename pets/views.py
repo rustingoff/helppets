@@ -6,7 +6,7 @@ def index(request):
     about = About.objects.last()
     main_slider = MainSlider.objects.all().order_by('-id')[:3]
     road_map = RoadMap.objects.all().order_by('-id')[:3]
-    service = Service.objects.all().order_by('-id')[:3]
+    service = Service.objects.last()
     donation_case = DonationCase.objects.all().order_by('-id')[:3]
     news = News.objects.all().order_by('-id')[:3]
 
@@ -18,4 +18,5 @@ def index(request):
         'donation_case': donation_case,
         'news': news,
     }
+
     return render(request, 'selected/index.html', context)
