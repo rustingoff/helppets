@@ -32,9 +32,10 @@ COLOR CODE: #735CB0
 .text-hover-theme-colored:hover {
   color: #65c178 !important;
 }
+
 /* background-theme-color */
 .bg-theme-colored {
-  background-color: #65c178 !important;
+  background-color: #ffcd00 !important;
 }
 .work-gallery .gallery-thumb .gallery-overlay {
   background: rgba(101, 193, 120, 0.7);

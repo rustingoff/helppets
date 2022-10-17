@@ -19,10 +19,21 @@ theme. But don't modify main-style.css file.
 
 /* Your custom css codes start here: */
 
+.donate-btn {
+    margin-top: 87px;
+    width: 100%;
+    height: 80px;
+    border-radius: 8px;
+    background: #ffcd00;
+    color: #fff;
+    font-size: 22px;
+    border: none;
+}
+
 .active-donate {
     padding: 24px 24px;
     color: #fff !important;
-    background: #36BC9B !important;
+    background: #ffcd00 !important;
     cursor: pointer;
     transition: .1s ease-in-out;
 }
@@ -35,5 +46,109 @@ theme. But don't modify main-style.css file.
 }
 
 .active-donate:hover {
-    background: #237662 !important;
+    background: #ffda42 !important;
+}
+
+.carousel-caption {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 50px !important;
+}
+
+.carousel-caption h3 {
+    color: #ffcd00;
+}
+
+.carousel-control {
+    text-shadow: 0;
+}
+
+.carousel-indicators li {
+    text-indent: 0;
+    padding: 5px 15px;
+    border: 1px solid #ffcd00;
+    color: #fff;
+    width: auto;
+    height: auto;
+    font-weight: 600;
+    background: rgba(255, 205, 0, 0.4);
+    position: relative;
+    margin: 3px 10px;
+}
+
+.carousel-indicators li:not(:last-of-type):after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid #ffcd00;
+}
+
+.carousel-indicators li.active {
+    text-indent: 0;
+    background: #ffcd00;
+    color: #fff;
+    width: auto;
+    height: auto;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 12px;
+        font-style: italic;
+        font-weight: bold;
+        padding-bottom: 10px !important;
+    }
+
+    .carousel-indicators{
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .carousel-indicators li {
+        left: 0;
+        padding: 2px 5px;
+    }
+}
+
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,00001)));
+    background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%) !important;
+}
+
+.carousel-control.right {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,00001)));
+    background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%) !important;
+}
+
+.text-new-theme-colored {
+    color: #ffcd00;
+}
+
+.text-new-theme-btn {
+    color: white;
+    background: #eed15d;
+    border-color: #eed15d;
+}
+
+.text-new-theme-btn:hover {
+    color: white;
+    background: #ffcd00;
+    border-color: #ffcd00;
 }
