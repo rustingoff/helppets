@@ -20,10 +20,11 @@ theme. But don't modify main-style.css file.
 /* Your custom css codes start here: */
 
 .donate-btn {
+    margin-top: 87px;
     width: 100%;
     height: 80px;
     border-radius: 8px;
-    background: #36BC9B;
+    background: #ffcd00;
     color: #fff;
     font-size: 22px;
     border: none;
@@ -32,7 +33,7 @@ theme. But don't modify main-style.css file.
 .active-donate {
     padding: 24px 24px;
     color: #fff !important;
-    background: #36BC9B !important;
+    background: #ffcd00 !important;
     cursor: pointer;
     transition: .1s ease-in-out;
 }
@@ -45,7 +46,7 @@ theme. But don't modify main-style.css file.
 }
 
 .active-donate:hover {
-    background: #237662 !important;
+    background: #ffda42 !important;
 }
 
 .carousel-caption {
@@ -56,7 +57,7 @@ theme. But don't modify main-style.css file.
 }
 
 .carousel-caption h3 {
-    color: #37BC9B;
+    color: #ffcd00;
 }
 
 .carousel-control {
@@ -66,12 +67,12 @@ theme. But don't modify main-style.css file.
 .carousel-indicators li {
     text-indent: 0;
     padding: 5px 15px;
-    border: 1px solid #37BC9B;
+    border: 1px solid #ffcd00;
     color: #fff;
     width: auto;
     height: auto;
     font-weight: 600;
-    background: rgba(55, 188, 155, 0.4);
+    background: rgba(255, 205, 0, 0.4);
     position: relative;
     margin: 3px 10px;
 }
@@ -88,12 +89,12 @@ theme. But don't modify main-style.css file.
     height: 0;
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
-    border-left: 10px solid #37BC9B;
+    border-left: 10px solid #ffcd00;
 }
 
 .carousel-indicators li.active {
     text-indent: 0;
-    background: #37BC9B;
+    background: #ffcd00;
     color: #fff;
     width: auto;
     height: auto;
@@ -123,7 +124,6 @@ theme. But don't modify main-style.css file.
 }
 
 .carousel-control.left {
-
     background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,.0001) 100%);
     background-image: -o-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
     background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,00001)));
@@ -135,4 +135,20 @@ theme. But don't modify main-style.css file.
     background-image: -o-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
     background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,00001)));
     background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%) !important;
+}
+
+.text-new-theme-colored {
+    color: #ffcd00;
+}
+
+.text-new-theme-btn {
+    color: white;
+    background: #eed15d;
+    border-color: #eed15d;
+}
+
+.text-new-theme-btn:hover {
+    color: white;
+    background: #ffcd00;
+    border-color: #ffcd00;
 }

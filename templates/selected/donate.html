@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="widget no-border m-0">
-                            <ul class="styled-icons icon-dark icon-circled icon-theme-colored icon-sm pull-right flip sm-pull-none sm-text-center mt-sm-15">
+                            <ul class="styled-icons icon-dark icon-circled icon-sm pull-right flip sm-pull-none sm-text-center mt-sm-15">
                                 <li><a href="#"><i class="fa fa-facebook text-white"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter text-white"></i></a></li>
                                 <li><a href="#"><i class="fa fa-dribbble text-white"></i></a></li>
@@ -116,11 +116,11 @@
         <div class="header-nav">
             <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
                 <div class="container">
-                    <nav id="menuzord-right" class="menuzord green no-bg">
+                    <nav id="menuzord-right" class="menuzord no-bg">
                         <a class="menuzord-brand flip" href="javascript:void(0)"><img
                                 src="{% static 'images/logo-wide.png'  %}" alt=""></a>
-                        <ul class="menuzord-menu onepage-nav">
-                            <li class="active"><a href="#home">Home</a></li>
+                        <ul class="menuzord-menu">
+                            <li class="active"><a href="{% url 'index' %}">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#products">Donation Case</a></li>
                             <li><a href="#services">Services</a></li>
@@ -143,30 +143,18 @@
                         <div class="col-md-8">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h2 class="text-left mb-20">Lorem Ipsum</h2>
+                                    <h2 class="text-left mb-20">Donation case</h2>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="my-10">
-                                        <img style="border-radius: 12px" src="https://s26.postimg.cc/l7244vg2x/cg2.jpg"
-                                             width="100%">
+                                        <img style="border-radius: 12px" src="{{ donation_case.image.url }}" alt="image" width="100%">
                                     </div>
                                 </div>
                                 <div class="col-md-12 ">
                                     <div class="mt-10 mb-10" style="border-top: 1px solid grey">
 
-                                        <h4 class="entry-title text-black text-capitalize mt-10">Title</h4>
-                                        <p class="mt-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            Accusamus alias
-                                            architecto aut blanditiis consectetur consequatur ducimus eum explicabo fuga
-                                            fugiat iure labore minus natus nobis placeat, porro quis reprehenderit sequi
-                                            voluptatibus voluptatum. Ducimus fugit minus, natus necessitatibus obcaecati
-                                            omnis quo vel voluptate? Debitis dolore ea exercitationem expedita,
-                                            laudantium maxime natus nihil nisi, odio officia qui quidem quod quos.
-                                            Accusantium aperiam assumenda delectus error, explicabo id ipsa ipsum labore
-                                            laboriosam laborum, perspiciatis quibusdam repellat sapiente. Ab animi
-                                            consectetur cupiditate doloremque eligendi harum ipsam laborum libero
-                                            maxime, odio possimus quaerat quam quo, ratione sed veritatis voluptatum?
-                                            Cum ea et iure non rem.</p>
+                                        <h4 class="entry-title text-black text-capitalize mt-10">{{ donation_case.title }}</h4>
+                                        <p class="mt-20">{{ donation_case.description }}</p>
                                     </div>
                                 </div>
 

@@ -39,6 +39,7 @@ class About(models.Model):
 class RoadMap(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
+    year = models.CharField(max_length=200, default='')
     description = models.TextField()
     image = models.FileField(upload_to='roadmap')
 
@@ -53,16 +54,16 @@ class Service(models.Model):
     description = models.TextField()
     image = models.FileField(upload_to='service')
     m_image1 = models.FileField(upload_to='service/m', null=True)
-#     m_image1_word1 = models.CharField(max_length=10, default='')
-#     m_image1_word2 = models.CharField(max_length=10, default='')
+    m_image1_word1 = models.CharField(max_length=10, default='')
+    m_image1_word2 = models.CharField(max_length=10, default='')
 
-#     m_image2 = models.FileField(upload_to='service/m', null=True)
-#     m_image2_word1 = models.CharField(max_length=10, default='')
-#     m_image2_word2 = models.CharField(max_length=10, default='')
+    m_image2 = models.FileField(upload_to='service/m', null=True)
+    m_image2_word1 = models.CharField(max_length=10, default='')
+    m_image2_word2 = models.CharField(max_length=10, default='')
 
-#     m_image3 = models.FileField(upload_to='service/m', null=True)
-#     m_image3_word1 = models.CharField(max_length=10, default='')
-#     m_image3_word2 = models.CharField(max_length=10, default='')
+    m_image3 = models.FileField(upload_to='service/m', null=True)
+    m_image3_word1 = models.CharField(max_length=10, default='')
+    m_image3_word2 = models.CharField(max_length=10, default='')
 
     def __str__(self):
         return self.first_part_title + ' ' + self.second_part_title

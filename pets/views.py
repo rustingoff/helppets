@@ -6,7 +6,7 @@ from .models import MainSlider, About, RoadMap, Service, DonationCase, News, Sub
 def index(request):
     about = About.objects.last()
     main_slider = MainSlider.objects.all().order_by('-id')[:3]
-    road_map = RoadMap.objects.all().order_by('-id')[:3]
+    road_map = RoadMap.objects.all()
     service = Service.objects.last()
     donation_case = DonationCase.objects.all().order_by('-id')[:3]
     news = News.objects.all().order_by('-id')[:3]
@@ -33,3 +33,13 @@ def get_subscription(request):
             return HttpResponseRedirect('/')
     else:
         return HttpResponseRedirect('/')
+
+
+def donate(request, id: int):
+    donation_case = DonationCase.objects.get(id=id)
+    context = {
+        'donation_case': donation_case,
+    }
+    return render(request, 'selected/donate.html', context)
+
+

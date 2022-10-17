@@ -103,7 +103,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="widget no-border m-0">
-                            <ul class="styled-icons icon-dark icon-circled icon-theme-colored icon-sm pull-right flip sm-pull-none sm-text-center mt-sm-15">
+                            <ul class="styled-icons icon-dark icon-circled icon-sm pull-right flip sm-pull-none sm-text-center mt-sm-15">
                                 <li><a href="#"><i class="fa fa-facebook text-white"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter text-white"></i></a></li>
                                 <li><a href="#"><i class="fa fa-dribbble text-white"></i></a></li>
@@ -118,7 +118,7 @@
         <div class="header-nav">
             <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
                 <div class="container">
-                    <nav id="menuzord-right" class="menuzord green no-bg">
+                    <nav id="menuzord-right" class="menuzord no-bg">
                         <a class="menuzord-brand flip" href="javascript:void(0)"><img
                                 src="{% static 'images/logo-wide.png'  %}" alt=""></a>
                         <ul class="menuzord-menu onepage-nav">
@@ -362,7 +362,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="meet-doctors">
-                                <h2 class="text-uppercase mt-20">{{ about.first_part_title }} <span class="text-theme-colored">{{ about.second_part_title }}</span></h2>
+                                <h2 class="text-uppercase mt-20">{{ about.first_part_title }} <span class="text-new-theme-colored">{{ about.second_part_title }}</span></h2>
                                 <p>{{ about.description }}</p>
                             </div>
                         </div>
@@ -377,7 +377,7 @@
             <div class="section-title text-center">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="text-center mb-40 text-white">Donation<span class="text-theme-colored">  Case</span>
+                        <h2 class="text-center mb-40 text-white">Donation<span class="text-new-theme-colored">  Case</span>
                         </h2>
                         <!-- Portfolio Gallery Grid -->
                         <div id="grid-petcare-gallery" class="gallery-isotope grid-3 gutter clearfix">
@@ -390,13 +390,13 @@
                                             <img alt="" src="{{ item.image.url }}" class="img-responsive img-fullwidth">
                                             <div class="overlay">
                                                 <div class="btn-add-to-cart-wrapper" style="width: 100%">
-                                                    <a class="btn btn-theme-colored btn-md btn-flat pl-20 mb-10 pr-20 btn-add-to-cart text-uppercase font-weight-700 "
+                                                    <a class="btn text-new-theme-btn btn-md btn-flat pl-20 mb-10 pr-20 btn-add-to-cart text-uppercase font-weight-700 "
                                                        style="width: 100%"
-                                                       href="shop-cart.html" target="_blank">Donate</a>
+                                                       href="{% url 'donate' item.id %}" target="_blank">Donate</a>
                                                 </div>
                                             </div>
                                             <div class="progress">
-                                                <div class="progress-bar" style="width: 25%; background-color: #37BC9B; border-radius: 0px; " aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Donate Progress</div>
+                                                <div class="progress-bar" style="width: 25%; background-color: #ffcd00; border-radius: 0;" aria-valuenow="{{ item.amount }}" aria-valuemin="0" aria-valuemax="100">Donate Progress</div>
                                             </div>
 
                                         </div>
@@ -427,7 +427,7 @@
                         <div class="col-md-8">
                             <div class="meet-doctors">
                                 <h2 class="text-uppercase mt-20">{{ service.first_part_title }}<span
-                                        class="text-theme-colored"> {{ service.second_part_title }}</span></h2>
+                                        class="text-new-theme-colored"> {{ service.second_part_title }}</span></h2>
                                 <p>{{ service.description }}</p>
                             </div>
                             <div class="row mt-30">
@@ -436,7 +436,7 @@
                                         <img class="img-thumbnail" src="{{ service.m_image1.url }}" alt="">
                                         <h4 class="icon-box-title mt-20 mb-20 text-uppercase letter-sapce-3 font-weight-400">
                                             {{ service.m_image1_word1 }}
-                                            <span class="text-theme-colored"> {{ service.m_image1_word2 }}</span></h4>
+                                            <span class="text-new-theme-colored"> {{ service.m_image1_word2 }}</span></h4>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -444,7 +444,7 @@
                                         <img class="img-thumbnail" src="{{ service.m_image2.url }}"
                                              alt="">
                                         <h4 class="icon-box-title mt-20 mb-20 text-uppercase letter-sapce-3 font-weight-400">
-                                            {{ service.m_image2_word1 }}<span class="text-theme-colored"> {{ service.m_image2_word2 }}</span></h4>
+                                            {{ service.m_image2_word1 }}<span class="text-new-theme-colored"> {{ service.m_image2_word2 }}</span></h4>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -452,7 +452,7 @@
                                         <img class="img-thumbnail object-fit" src="{{ service.m_image3.url }}"
                                              alt="">
                                         <h4 class="icon-box-title mt-20 mb-20 text-uppercase letter-sapce-3 font-weight-400">
-                                            {{ service.m_image3_word1 }} <span class="text-theme-colored"> {{ service.m_image3_word2 }}</span></h4>
+                                            {{ service.m_image3_word1 }} <span class="text-new-theme-colored"> {{ service.m_image3_word2 }}</span></h4>
                                     </div>
                                 </div>
                             </div>
@@ -469,61 +469,31 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h2 class="mt-0 line-height-1 text-white">Pet Care<span
-                                    class="text-theme-colored">  Roadmap</span></h2>
+                                    class="text-new-theme-colored">  Roadmap</span></h2>
                         </div>
                     </div>
                 </div>
                 <div class="section-content">
                     <div class="row">
                         <div class="col-lg-12">
-
                             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                                 <!-- Indicators -->
                                 <ul class="carousel-indicators">
-                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"> 2010 </li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="1"> 2010</li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="2"> 2010</li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="3"> 2010</li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="4"> 2010</li>
+                                {% for item in road_map %}
+                                    <li data-target="#carousel-example-generic" data-slide-to="{{ item.id }}" {% if item.id == 1 %} class="active" {% endif %}> {{ item.year }} </li>
+                                {% endfor %}
                                 </ul>
-
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" role="listbox">
-                                    <div class="item active">
-                                        <img src="https://s26.postimg.cc/7ayxq3q5l/cg5.jpg" width="100%">
+                                {% for item in road_map %}
+                                    <div class="item {% if item.id == 1 %} active {% endif %}">
+                                        <img src="{{ item.image.url }}" width="100%">
                                         <div class="carousel-caption">
-                                            <h3>First Slide</h3>
-                                            <p>Caption goes here<br></p>
+                                            <h3>{{ item.title }}</h3>
+                                            <p>{{ item.description }}<br></p>
                                         </div>
                                     </div>
-                                    <div class="item">
-                                        <img src="https://s26.postimg.cc/zccz3svft/cg6.jpg" width="100%">
-                                        <div class="carousel-caption">
-                                            <h3>Second slide</h3>
-                                            <p>Caption goes here</p>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://s26.postimg.cc/hyxmrttt5/cg1.jpg" width="100%">
-                                        <div class="carousel-caption">
-                                            <h3>Third slide</h3>
-                                            <p>Caption goes here</p>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://s26.postimg.cc/7g2ozrxgp/cg4.jpg" width="100%">
-                                        <div class="carousel-caption">
-                                            <h3>Fourth slide</h3>
-                                            <p>Caption goes here</p>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://s26.postimg.cc/l7244vg2x/cg2.jpg" width="100%">
-                                        <div class="carousel-caption">
-                                            <h3>Fifth slide</h3>
-                                            <p>Caption goes here</p>
-                                        </div>
-                                    </div>
+                                {% endfor %}
                                 </div>
 
                                 <!-- Controls -->
@@ -536,39 +506,6 @@
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
-
-                        </div>
-
-                            <!-- Portfolio Gallery Grid -->
-                            <div id="grid3" class="gallery-isotope grid-6 gutter clearfix">
-                                <!-- Portfolio Item Start -->
-                                {% for i in roadmap %}
-                                <div class="gallery-item photography">
-                                    <div class="thumb">
-                                        <img class="img-fullwidth" src="https://place-hold.it/185x185" alt="project">
-                                    </div>
-                                </div>
-                                {% endfor %}
-                                <!-- Portfolio Item End -->
-                            </div>
-                            <!-- End Portfolio Gallery Grid -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- Portfolio Gallery Grid -->
-                            <div id="grid3" class="gallery-isotope grid-6 gutter clearfix">
-                                <!-- Portfolio Item Start -->
-                                {% for i in roadmap %}
-                                <div class="gallery-item photography">
-                                    <div class="thumb">
-                                        <img class="img-fullwidth" src="https://place-hold.it/185x185" alt="project">
-                                    </div>
-                                </div>
-                                {% endfor %}
-                                <!-- Portfolio Item End -->
-                            </div>
-                            <!-- End Portfolio Gallery Grid -->
                         </div>
                     </div>
                 </div>
@@ -581,7 +518,7 @@
             <div class="section-title text-center">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="mt-0 line-height-1">Latest <span class="text-theme-colored">News</span></h2>
+                        <h2 class="mt-0 line-height-1">Latest <span class="text-new-theme-colored">News</span></h2>
                     </div>
                 </div>
             </div>
@@ -591,7 +528,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <article class="post clearfix mb-sm-30">
                             <div class="entry-header">
-                                <div class="post-thumb thumb" style="height: 400px">
+                                <div class="post-thumb thumb">
                                     <img src="{{ item.image.url }}" alt="" class="img-responsive img-fullwidth" style="object-fit: cover">
                                 </div>
                             </div>
@@ -641,7 +578,7 @@
                                            class="form-control input-lg font-16" data-height="45px"
                                            id="mce-EMAIL-footer your_email" style="height: 45px;">
                                     <span class="input-group-btn">
-                  <button data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit">Subscribe</button>
+                  <button data-height="45px" class="btn btn-colored text-new-theme-btn btn-xs m-0 font-14" type="submit">Subscribe</button>
                 </span>
                                 </div>
                             </form>
