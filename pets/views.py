@@ -31,6 +31,8 @@ def get_subscription(request):
             s.email = form.cleaned_data['your_email']
             s.save()
             return HttpResponseRedirect('/')
+        else:
+            return HttpResponseRedirect('/')
     else:
         return HttpResponseRedirect('/')
 
