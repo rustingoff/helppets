@@ -61,7 +61,7 @@ theme. But don't modify main-style.css file.
 }
 
 .carousel-control {
-    text-shadow: 0;
+    text-shadow: none;
 }
 
 .carousel-indicators li {
@@ -151,4 +151,13 @@ theme. But don't modify main-style.css file.
     color: white;
     background: #ffcd00;
     border-color: #ffcd00;
+}
+
+.carousel-inner .item {
+    width: 100%;
+    height: 800px;
+}
+
+.carousel-inner .item img {
+    object-fit: cover;
 }

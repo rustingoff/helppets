@@ -58,12 +58,7 @@
     <!-- Revolution Slider 5.x SCRIPTS -->
     <script src="{% static 'js/revolution-slider/js/jquery.themepunch.tools.min.js' %}"></script>
     <script src="{% static 'js/revolution-slider/js/jquery.themepunch.revolution.min.js' %}"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="{% static 'js/tinymce.min.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
 
     <![endif]-->
@@ -230,7 +225,7 @@
                                          data-splitin="none"
                                          data-splitout="none"
                                          data-responsive_offset="on"
-                                         style="z-index: 5; white-space: nowrap; font-weight:400;">{{ item.description }}
+                                         style="z-index: 5; white-space: nowrap; font-weight:400;">{{ item.description|safe }}
                                     </div>
 
                                     <!-- LAYER NR. 4 -->
@@ -365,7 +360,7 @@
                             <div class="meet-doctors">
                                 <h2 class="text-uppercase mt-20">{{ about.first_part_title }} <span
                                         class="text-new-theme-colored">{{ about.second_part_title }}</span></h2>
-                                <p>{{ about.description }}</p>
+                                <p>{{ about.description|safe }}</p>
                             </div>
                         </div>
                     </div>
@@ -414,7 +409,7 @@
                                                     <a href="#"><h5
                                                             class="product-title text-white font-18">{{ item.title }}</h5>
                                                     </a>
-                                                    <div class="price text-white">{{ item.description }}</div>
+                                                    <div class="price text-white">{{ item.description|safe }}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -440,7 +435,7 @@
                             <div class="meet-doctors">
                                 <h2 class="text-uppercase mt-20">{{ service.first_part_title }}<span
                                         class="text-new-theme-colored"> {{ service.second_part_title }}</span></h2>
-                                <p>{{ service.description }}</p>
+                                <p>{{ service.description|safe }}</p>
                             </div>
                             <div class="row mt-30">
                                 <div class="col-md-4">
@@ -479,7 +474,7 @@
 
         <!-- Section: Gallery -->
         <section id="gallary" class="layer-overlay overlay-dark-8" data-bg-img="{% static 'images/pattern/pt18.png' %}">
-            <div class="container pt-40 pb-40">
+            <div class="container pb-0">
                 <div class="section-title text-center">
                     <div class="row">
                         <div class="col-md-12">
@@ -488,43 +483,38 @@
                         </div>
                     </div>
                 </div>
-                <div class="section-content">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                <!-- Indicators -->
-                                <ul class="carousel-indicators">
-                                    {% for item in road_map %}
-                                        <li data-target="#carousel-example-generic" data-slide-to="{{ item.id }}"
-                                                {% if item.id == 1 %} class="active" {% endif %}> {{ item.year }} </li>
-                                    {% endfor %}
-                                </ul>
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner" role="listbox">
-                                    {% for item in road_map %}
-                                        <div class="item {% if item.id == 1 %} active {% endif %}">
-                                            <img src="{{ item.image.url }}" width="100%">
-                                            <div class="carousel-caption">
-                                                <h3>{{ item.title }}</h3>
-                                                <p>{{ item.description }}<br></p>
-                                            </div>
-                                        </div>
-                                    {% endfor %}
+            </div>
+            <div class="section-content container pt-10">
+                <div class="col-lg-12">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                        {% for item in road_map %}
+                            <li data-target="#carousel-example-generic" data-slide-to="{{ item.id }}" {% if item.id == 1 %} class="active" {% endif %}> {{ item.year }} </li>
+                        {% endfor %}
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                        {% for item in road_map %}
+                            <div class="item {% if item.id == 1 %} active {% endif %}">
+                                <img src="{{ item.image.url }}" width="100%" alt="{{ item.title }}">
+                                <div class="carousel-caption">
+                                    <h3>{{ item.title }}</h3>
+                                    <p>{{ item.description|safe}}<br></p>
                                 </div>
-
-                                <!-- Controls -->
-                                <a class="left carousel-control" href="#carousel-example-generic" role="button"
-                                   data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="right carousel-control" href="#carousel-example-generic" role="button"
-                                   data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
                             </div>
+                        {% endfor %}
                         </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -557,10 +547,8 @@
                                                 <ul>
                                                     <li class="font-16 font-weight-600 border-bottom bg-white-f1 pt-5 pr-15 pb-5 pl-15">
                                                         {{ item.date|date:"d" }}</li>
-                                                    </li>
                                                     <li class="font-12 text-white text-uppercase bg-theme-colored pt-5 pr-15 pb-5 pl-15">
                                                         {{ item.date|date:"M" }}</li>
-                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="media-body pl-10">
@@ -569,7 +557,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <p class="mt-10">{{ item.description }}</p>
+                                        <p class="mt-10">{{ item.description|safe }}</p>
                                         <div class="clearfix"></div>
                                     </div>
                                 </article>
@@ -613,7 +601,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
+
         <section id="sponsors" class="layer-overlay overlay-white">
             <div class="container">
                 <div class="section-title text-center">
@@ -627,49 +617,49 @@
                     <div class="col-md-3">
                         <div class="thumb text-center">
                             <a href="#"><img class="img-thumbnail object-fit" src="https://place-hold.it/60x60"
-                                 alt=""></a>
+                                             alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="thumb text-center">
                             <a href="#"><img class="img-thumbnail object-fit" src="https://place-hold.it/60x60"
-                                 alt=""></a>
+                                             alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="thumb text-center">
                             <a href="#"><img class="img-thumbnail object-fit" src="https://place-hold.it/60x60"
-                                 alt=""></a>
+                                             alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="thumb text-center">
                             <a href="#"><img class="img-thumbnail object-fit" src="https://place-hold.it/60x60"
-                                 alt=""></a>
+                                             alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="thumb text-center">
                             <a href="#"><img class="img-thumbnail object-fit" src="https://place-hold.it/60x60"
-                                 alt=""></a>
+                                             alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="thumb text-center">
                             <a href="#"><img class="img-thumbnail object-fit" src="https://place-hold.it/60x60"
-                                 alt=""></a>
+                                             alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="thumb text-center">
                             <a href="#"><img class="img-thumbnail object-fit" src="https://place-hold.it/60x60"
-                                 alt=""></a>
+                                             alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="thumb text-center">
                             <a href="#"><img class="img-thumbnail object-fit" src="https://place-hold.it/60x60"
-                                 alt=""></a>
+                                             alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -715,8 +705,7 @@
 <!-- Footer Scripts -->
 <!-- JS | Custom script for all pages -->
 <script src="{% static 'js/custom.js' %}"></script>
-
-<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+<!-- SLIDER REVOLUTION 5.0 EXTENSIONS
       (Load Extensions only on Local File Systems ! 
        The following part can be removed on Server for On Demand Loading) -->
 <script type="text/javascript"

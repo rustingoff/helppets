@@ -1,5 +1,6 @@
 from django.db import models
 from django import forms
+from tinymce.models import HTMLField
 
 
 class SubscribeForm(forms.Form):
@@ -18,7 +19,7 @@ class MainSlider(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200, default='')
-    description = models.TextField()
+    description = HTMLField()
     image = models.FileField(upload_to='slider')
 
     def __str__(self):
@@ -29,7 +30,7 @@ class About(models.Model):
     id = models.AutoField(primary_key=True)
     first_part_title = models.CharField(max_length=200)
     second_part_title = models.CharField(max_length=200, default='')
-    description = models.TextField()
+    description = HTMLField()
     image = models.FileField(upload_to='about')
 
     def __str__(self):
@@ -40,7 +41,7 @@ class RoadMap(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     year = models.CharField(max_length=200, default='')
-    description = models.TextField()
+    description = HTMLField()
     image = models.FileField(upload_to='roadmap')
 
     def __str__(self):
@@ -51,7 +52,8 @@ class Service(models.Model):
     id = models.AutoField(primary_key=True)
     first_part_title = models.CharField(max_length=200)
     second_part_title = models.CharField(max_length=200, default='')
-    description = models.TextField()
+    description = HTMLField()
+
     image = models.FileField(upload_to='service')
     m_image1 = models.FileField(upload_to='service/m', null=True)
     m_image1_word1 = models.CharField(max_length=10, default='')
@@ -72,7 +74,7 @@ class Service(models.Model):
 class DonationCase(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = HTMLField()
     image = models.FileField(upload_to='donation_case')
     amount = models.FloatField()
 
@@ -83,7 +85,7 @@ class DonationCase(models.Model):
 class News(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = HTMLField()
     image = models.FileField(upload_to='news')
     date = models.DateField()
 
