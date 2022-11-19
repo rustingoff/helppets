@@ -126,6 +126,7 @@ theme. But don't modify main-style.css file.
     .carousel-indicators{
         left: 0;
         right: 0;
+        bottom: -50px;
         margin: auto;
         width: 100%;
         font-size: 10px;
@@ -170,6 +171,20 @@ theme. But don't modify main-style.css file.
 .carousel-inner .item {
     width: 100%;
     height: 800px;
+}
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        position: initial;
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+
+    .carousel-inner .item {
+        width: 100%;
+        min-height: 400px;
+        height: auto;
+    }
 }
 
 .carousel-inner .item img {
