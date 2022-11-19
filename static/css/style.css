@@ -65,23 +65,27 @@ theme. But don't modify main-style.css file.
 }
 
 .carousel-indicators li {
-    text-indent: 0;
-    padding: 5px 15px;
+    padding: 0;
+    top: 8px;
     border: 1px solid #ffcd00;
     color: #fff;
-    width: auto;
-    height: auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
     font-weight: 600;
     background: rgba(255, 205, 0, 0.4);
     position: relative;
-    margin: 3px 10px;
+    margin: 5px 10px;
+    text-indent: -99999px;
+    transition: 0.5s ease-in-out;
+    transition-property: padding, width, height, background, border-radius;
 }
 
 .carousel-indicators li:not(:last-of-type):after {
     content: "";
     position: absolute;
     right: -20px;
-    top: 0;
+    top: -2px;
     bottom: 0;
     margin: auto;
     display: flex;
@@ -92,13 +96,23 @@ theme. But don't modify main-style.css file.
     border-left: 10px solid #ffcd00;
 }
 
+.carousel-indicators li.active:after {
+    top: 1px;
+}
+
 .carousel-indicators li.active {
+    top: 0;
+    padding: 5px 15px;
     text-indent: 0;
     background: #ffcd00;
+    border-radius: 10px;
     color: #fff;
     width: auto;
     height: auto;
+    min-height: 30px;
+    min-width: 60px;
     margin: 0 10px;
+    transition: padding,width,height,background,border-radius  0.5s ease-in-out;
 }
 
 @media (max-width: 768px) {

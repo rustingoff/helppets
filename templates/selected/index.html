@@ -490,7 +490,13 @@
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
                         {% for item in road_map %}
-                            <li data-target="#carousel-example-generic" data-slide-to="{{ item.id }}" {% if item.id == 1 %} class="active" {% endif %}> {{ item.year }} </li>
+                            <li
+                                    data-target="#carousel-example-generic"
+                                    data-slide-to="{{ item.id }}"
+                                    {% if item.id == 1 %} class="active" {% endif %}
+                            >
+                                 {{item.year}}
+                            </li>
                         {% endfor %}
                         </ol>
                         <!-- Wrapper for slides -->
